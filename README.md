@@ -1,2 +1,1 @@
-# yg-webapp
-Boilerplate
+# Webapp boilerplate
