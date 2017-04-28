@@ -1,9 +1,30 @@
 var path = require('path');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = {
-    entry: './app/index.js',
+    context: path.resolve(__dirname, 'app'),
+    entry: './index.js',
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
-    }
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js'
+    },
+    //devtool: 'cheap-eval-source-map',
+    devServer: {
+        proxy: {
+            '/': 'http://projects.dev/YOANN/yg-webapp/dist'
+        }
+    },
+    plugins: [
+        new CopyWebpackPlugin([
+            { from: 'index.php' },
+            { from: 'php/**/*' }
+        ], {
+            copyUnmodified: false
+        }),
+        new WriteFilePlugin({
+            log: false,
+            test: /\.php$/
+        })
+    ]
 };

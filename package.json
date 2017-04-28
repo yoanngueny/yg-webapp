@@ -1,28 +1,31 @@
 {
-    "name": "yg-webapp",
-    "version": "1.0.0",
-    "description": "Webapp boilerplate",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "",
-        "build": "webpack"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/yoanngueny/yg-webapp.git"
-    },
-    "keywords": [
-        "boilerplate",
-        "webapp"
-    ],
-    "author": "yoanngueny",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/yoanngueny/yg-webapp/issues"
-    },
-    "homepage": "https://github.com/yoanngueny/yg-webapp#readme",
-    "devDependencies": {
-        "webpack": "^2.4.1"
-    }
+  "name": "yg-webapp",
+  "version": "1.0.0",
+  "description": "Webapp boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoanngueny/yg-webapp.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "webapp"
+  ],
+  "author": "yoanngueny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yoanngueny/yg-webapp/issues"
+  },
+  "homepage": "https://github.com/yoanngueny/yg-webapp#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.5",
+    "write-file-webpack-plugin": "^4.0.2"
+  }
 }
