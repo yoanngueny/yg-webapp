@@ -1,1 +1,1 @@
-console.log('Hello world 8 !');
+console.log('Hello world !', PRODUCTION);

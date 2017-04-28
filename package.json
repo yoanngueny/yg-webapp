@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open",
-    "build": "webpack"
+    "start": "webpack-dev-server --env=dev --open",
+    "build": "webpack --env=prod"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.1.0",
     "write-file-webpack-plugin": "^4.0.2"
   }
 }
