@@ -1,5 +1,7 @@
 <?php
 require_once('php/conf.php');
+
+$manifest = file_exists("manifest.json") ? json_decode(file_get_contents("manifest.json"), true) : null;
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +13,16 @@ require_once('php/conf.php');
 
 <body>
     Hello <?php echo HELLO; ?>
-    <script src="/bundle.js"></script>
+
+    <?php
+    function getFileName($fileName) {
+        global $manifest;
+        return $manifest ? $manifest[$fileName] : $fileName;
+    }
+    ?>
+    <script src="<?php echo getFileName("manifest.js"); ?>"></script>
+    <script src="<?php echo getFileName("vendor.js"); ?>"></script>
+    <script src="<?php echo getFileName("main.js"); ?>"></script>
 </body>
 
 </html>

@@ -23,10 +23,16 @@
   },
   "homepage": "https://github.com/yoanngueny/yg-webapp#readme",
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.16",
     "copy-webpack-plugin": "^4.0.1",
     "webpack": "^2.4.1",
+    "webpack-clean-plugin": "^0.2.3",
     "webpack-dev-server": "^2.4.5",
+    "webpack-manifest-plugin": "^1.1.0",
     "webpack-merge": "^4.1.0",
     "write-file-webpack-plugin": "^4.0.2"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
   }
 }
