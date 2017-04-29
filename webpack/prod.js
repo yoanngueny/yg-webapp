@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const Merge = require('webpack-merge');
 const CommonConfig = require('./common.js');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function(config) {
     return Merge(CommonConfig(config), {
@@ -24,6 +25,8 @@ module.exports = function(config) {
                 },
                 comments: false
             })*/
+            // create styles css
+            new ExtractTextPlugin('[name].[contenthash].css'),
             // create chunks files manifest
             new ManifestPlugin(),
         ]

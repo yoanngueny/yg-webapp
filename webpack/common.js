@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function(config) {
     return {
@@ -13,10 +14,18 @@ module.exports = function(config) {
             path: path.resolve(config.root, 'dist'),
             filename: '[name].js',
         },
+        module: {
+            rules: [{
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    use: 'css-loader'
+                })
+            }]
+        },
         //devtool: 'cheap-eval-source-map',
         plugins: [
             // clean export folder
-            new CleanWebpackPlugin(['dist'], {
+            new CleanWebpackPlugin('dist', {
                 root: config.root
             }),
             // create vendor bundle with all imported node_modules

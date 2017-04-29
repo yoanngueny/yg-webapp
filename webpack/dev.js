@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const Merge = require('webpack-merge');
 const CommonConfig = require('./common.js');
 const WriteFilePlugin = require('write-file-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function(config) {
     return Merge(CommonConfig(config), {
@@ -14,6 +15,8 @@ module.exports = function(config) {
             new webpack.DefinePlugin({
                 PRODUCTION: JSON.stringify(false)
             }),
+            // create styles css
+            new ExtractTextPlugin('[name].css'),
             // force webserver to write files
             new WriteFilePlugin({
                 log: false,

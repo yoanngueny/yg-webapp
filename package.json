@@ -25,6 +25,8 @@
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.16",
     "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
     "webpack": "^2.4.1",
     "webpack-clean-plugin": "^0.2.3",
     "webpack-dev-server": "^2.4.5",
